@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, {useEffect,useState} from 'react';
 import './App.css';
-
+import axios from 'axios';
+import { Box } from '@chakra-ui/react'
+import Nav from './Nav';
+import Main from './images/Main';
 function App() {
+  const[value, setValue] = useState('fast')
+  const[data,setData] = useState([])
+  const getResponse = async () =>{
+    const response = await axios.get(`http://www.omdbapi.com/?apikey=42029095&t=${value}&type=movie`)
+    setData(response)
+  }
+  useEffect(()=>{
+    getResponse()
+  },[value])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className="App" w="100vw" p={5}>
+        <Nav/>
+        <Main value={value} setValue={setValue} data={data}/>
+
+    </Box> 
   );
 }
 
