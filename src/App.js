@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Box } from '@chakra-ui/react'
 import Nav from './Nav';
-import Main from './images/Main';
+import Main from './Main';
 function App() {
   const[value, setValue] = useState('')
   const[data,setData] = useState([])
