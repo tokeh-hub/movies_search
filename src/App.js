@@ -11,6 +11,7 @@ function App() {
     const response = await axios.get(`http://www.omdbapi.com/?apikey=42029095&t=${value}&type=movie`)
     setData(response)
   }
+  /*eslint disable*/
   useEffect(()=>{
     getResponse()
   },[value])
