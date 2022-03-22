@@ -14,7 +14,7 @@ function App() {
  /* eslint-disable */ 
   useEffect(()=>{
     getResponse()
-  },[value])
+  },[])
   return (
     <Box className="App" w="100vw" p={5}>
         <Nav/>
