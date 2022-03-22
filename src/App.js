@@ -5,10 +5,10 @@ import { Box } from '@chakra-ui/react'
 import Nav from './Nav';
 import Main from './images/Main';
 function App() {
-  const[value, setValue] = useState('fast')
+  const[value, setValue] = useState('')
   const[data,setData] = useState([])
   const getResponse = async () =>{
-    const response = await axios.get(`http://www.omdbapi.com/?apikey=42029095&t=${value}&type=movie`)
+    const response = await axios.get(`http://www.omdbapi.com/?apikey=42029095&t=fast&type=movie`)
     setData(response)
   }
  /* eslint-disable */ 
