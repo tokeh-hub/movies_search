@@ -1,19 +1,6 @@
 import React from 'react'
 import {Box, Flex, Text} from "@chakra-ui/react"
 import image from './images/gaara.png'
-import { extendTheme } from '@chakra-ui/react'
-
-// 2. Update the breakpoints as key-value pairs
-const breakpoints = {
-  sm: '480px',
-  md: '830px',
-  lg: '960px',
-  xl: '1200px',
-  '2xl': '1536px',
-}
-
-// 3. Extend the theme
-const theme = extendTheme({ breakpoints })
 
 const Nav = () => {
   return (
